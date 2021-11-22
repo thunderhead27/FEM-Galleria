@@ -47,6 +47,10 @@ const Close = styled.span`
 const Img = styled.img`
     width: 90%;
     align-self: center;
+
+    @media ${device.desktop} {
+        min-height: 80vh;
+    }
 `;
 
 const customStyles = {
@@ -66,6 +70,7 @@ const customStyles = {
     },
     overlay: {
         backgroundColor: "rgba(0,0,0,.75)",
+        zIndex: 100,
     },
 };
 

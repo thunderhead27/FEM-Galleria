@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import { device } from "../breakpoints";
 import { getSlide, getIndex, getSlideByIndex } from "../data";
 import SlideModal from "./SlideModal";
@@ -199,7 +199,7 @@ const Desc = styled.div`
     }
 `;
 
-const Source = styled.div`
+const Source = styled.a`
     grid-row: 3/4;
     justify-self: center;
     font-family: Libre Baskerville;
@@ -285,7 +285,9 @@ const Slide = ({ slideshow }) => {
                 <ThirdContainer>
                     <Year>{slide.year}</Year>
                     <Desc>{slide.description}</Desc>
-                    <Source>go to source</Source>
+                    <Source href={slide.source} target="_blank">
+                        go to source
+                    </Source>
                 </ThirdContainer>
             </Container>
             <Footer

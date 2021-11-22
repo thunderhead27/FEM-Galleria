@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { device } from "../breakpoints";
 import styled from "styled-components";
+import { IconContext } from "react-icons";
 import {
     IoPlaySkipBackOutline,
     IoPlaySkipForwardOutline,
@@ -90,12 +91,14 @@ const Footer = ({ painting, artist, prev, next }) => {
                     <h2 className="artist">{artist}</h2>
                 </Name>
                 <BtnContainer>
-                    <NavLink to={`${prev}`}>
-                        <IoPlaySkipBackOutline />
-                    </NavLink>
-                    <NavLink to={`${next}`}>
-                        <IoPlaySkipForwardOutline />
-                    </NavLink>
+                    <IconContext.Provider value={{ color: "black" }}>
+                        <NavLink to={`${prev}`}>
+                            <IoPlaySkipBackOutline />
+                        </NavLink>
+                        <NavLink to={`${next}`}>
+                            <IoPlaySkipForwardOutline />
+                        </NavLink>
+                    </IconContext.Provider>
                 </BtnContainer>
             </Nav>
         </Container>

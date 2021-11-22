@@ -26,3 +26,13 @@ html::-webkit-scrollbar-thumb {
   background: #fff;
   border-radius: 5rem;
 }
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #000;
+  text-decoration: none;
+}

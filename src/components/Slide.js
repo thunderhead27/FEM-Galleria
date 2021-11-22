@@ -55,7 +55,6 @@ const FigCap = styled.figcaption`
     grid-column: 1/2;
     margin-left: 1.6rem;
     margin-top: 1.6rem;
-    z-index: 2;
 
     @media ${device.tablet} {
         grid-row: 3/4;
@@ -161,6 +160,7 @@ const Year = styled.h1`
     font-style: normal;
     font-weight: 700;
     right: 2rem;
+    z-index: -1;
 
     @media ${device.tablet} {
         left: 2rem;
@@ -188,7 +188,6 @@ const Desc = styled.div`
     font-size: 14px;
     line-height: 28px;
     color: #7d7d7d;
-    z-index: 1;
 
     @media ${device.tablet} {
         width: calc(100% - 20rem);

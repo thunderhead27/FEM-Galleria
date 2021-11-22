@@ -1,6 +1,7 @@
 import React from "react";
 import Modal from "react-modal";
 import styled from "styled-components";
+import { device } from "../breakpoints";
 import { BiExpand } from "react-icons/bi";
 
 const Button = styled.button`
@@ -30,24 +31,27 @@ const Button = styled.button`
 `;
 
 const Close = styled.span`
-    padding-bottom: 2rem;
+    padding: 2rem;
     align-self: flex-end;
     font-family: Libre Baskerville;
-    font-size: 14px;
+    font-size: 1.4rem;
     font-style: normal;
     font-weight: 700;
     line-height: 17px;
     letter-spacing: 3px;
     color: #ffffff;
     text-transform: uppercase;
+    cursor: pointer;
 `;
 
 const Img = styled.img`
-    z-index: 100;
+    width: 90%;
+    align-self: center;
 `;
 
 const customStyles = {
     content: {
+        position: "absolute",
         display: "flex",
         flexDirection: "column",
         top: "50%",
@@ -58,6 +62,7 @@ const customStyles = {
         transform: "translate(-50%, -50%)",
         backgroundColor: "transparent",
         border: "none",
+        zIndex: 100,
     },
     overlay: {
         backgroundColor: "rgba(0,0,0,.75)",
@@ -88,6 +93,7 @@ const SlideModal = ({ img, alt }) => {
                 view image
             </Button>
             <Modal
+                className="Modal"
                 isOpen={modalIsOpen}
                 onAfterOpen={afterOpenModal}
                 onRequestClose={closeModal}

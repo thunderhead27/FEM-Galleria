@@ -69,7 +69,10 @@ const Navbar = ({ slideshow, setSlideshow, location }) => {
         <>
             <Nav>
                 <NavLink to="/">
-                    <Icon src="/assets/shared/logo.svg" alt="logo" />
+                    <Icon
+                        src={process.env.PUBLIC_URL + "/assets/shared/logo.svg"}
+                        alt="logo"
+                    />
                 </NavLink>
 
                 <SlideLink onClick={handleClick}>

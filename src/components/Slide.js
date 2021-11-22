@@ -122,7 +122,6 @@ const Artist = styled.img`
     width: 6.4rem;
     height: 6.4rem;
     margin-top: 8rem;
-    z-index: 10;
 
     @media ${device.tablet} {
         width: 12.8rem;
@@ -257,11 +256,19 @@ const Slide = ({ slideshow }) => {
             <Container>
                 <FirstContainer>
                     <Pic
-                        src={fixPath(`${slide.images.hero.small}`)}
+                        src={
+                            process.env.PUBLIC_URL +
+                            fixPath(`${slide.images.hero.small}`)
+                        }
                         alt={slide.name}
                     />
                     <FigCap>
-                        <SlideModal img={fixPath(`${slide.images.gallery}`)} />
+                        <SlideModal
+                            img={
+                                process.env.PUBLIC_URL +
+                                fixPath(`${slide.images.gallery}`)
+                            }
+                        />
                     </FigCap>
                 </FirstContainer>
 
@@ -269,7 +276,12 @@ const Slide = ({ slideshow }) => {
                     <h1 className="heading1">{slide.name}</h1>
                     <h2 className="heading2">{slide.artist.name}</h2>
                 </NameContainer>
-                <Artist src={fixPath(`${slide.artist.image}`)} />
+                <Artist
+                    src={
+                        process.env.PUBLIC_URL +
+                        fixPath(`${slide.artist.image}`)
+                    }
+                />
 
                 <ThirdContainer>
                     <Year>{slide.year}</Year>

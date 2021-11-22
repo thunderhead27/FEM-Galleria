@@ -55,6 +55,7 @@ const Name = styled.h2`
 `;
 
 const pictures = slides.map((item, index) => {
+    const fixPath = (path) => path.substring(1);
     return (
         <div>
             <Link
@@ -63,7 +64,13 @@ const pictures = slides.map((item, index) => {
                 style={{ textDecoration: "none" }}
             >
                 <Figure>
-                    <Picture src={`${item.images.gallery}`} alt={item.name} />
+                    <Picture
+                        src={
+                            process.env.PUBLIC_URL +
+                            fixPath(`${item.images.gallery}`)
+                        }
+                        alt={item.name}
+                    />
                     <Caption>
                         <Painting>{item.name}</Painting>
                         <Name>{item.artist.name}</Name>
